@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Toggle() {
-  return <button>OFF</button>;
+
+const [whatIShouldSay, setWhatIShouldSay] = useState(true)  
+
+function togglaBoy() {
+  setWhatIShouldSay(!whatIShouldSay)
+  console.log("brrrrat")
+}
+
+  return <button style={{background: whatIShouldSay ? "white" : "red"}} onClick={togglaBoy}>{whatIShouldSay ? "OFF" : "ON"}</button>;
 }
 
 export default Toggle;
